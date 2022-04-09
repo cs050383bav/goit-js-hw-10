@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["DEBOUNCE_DELAY","console","log"],"mappings":";;;AAGA,aAHA,QAAA,oBAEA,MAAMA,EAAiB,IACvBC,QAAQC,IADe","file":"src.f0be10ed.js","sourceRoot":"../src","sourcesContent":["import './css/styles.css';\n\nconst DEBOUNCE_DELAY = 300;\nconsole.log(DEBOUNCE_DELAY)\n"]}
