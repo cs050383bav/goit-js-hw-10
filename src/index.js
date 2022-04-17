@@ -5,11 +5,10 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { fetchCountries } from './js/fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
-// console.log(DEBOUNCE_DELAY)
 
-const inputEl = document.getElementById('search-box');
-const listEl = document.querySelector('.country-list');
-const infoEl = document.querySelector('.country-info');
+const inputElement = document.getElementById('search-box');
+const listElement = document.querySelector('.country-list');
+const infoElement = document.querySelector('.country-info');
 
 const cleanMarkup = ref => (ref.innerHTML = '');
 
@@ -17,8 +16,8 @@ const inputHandler = e => {
   const textInput = e.target.value.trim();
 
   if (!textInput) {
-    cleanMarkup(listEl);
-    cleanMarkup(infoEl);
+    cleanMarkup(listElement);
+    cleanMarkup(infoElement);
     return;
   }
 
@@ -32,21 +31,21 @@ const inputHandler = e => {
       renderMarkup(data);
     })
     .catch(err => {
-      cleanMarkup(listEl);
-      cleanMarkup(infoEl);
+      cleanMarkup(listElement);
+      cleanMarkup(infoElement);
       Notify.failure('Oops, there is no country with that name');
     });
 };
 
 const renderMarkup = data => {
   if (data.length === 1) {
-    cleanMarkup(listEl);
+    cleanMarkup(listElement);
     const markupInfo = createInfoMarkup(data);
-    infoEl.innerHTML = markupInfo;
+    infoElement.innerHTML = markupInfo;
   } else {
-    cleanMarkup(infoEl);
+    cleanMarkup(infoElement);
     const markupList = createListMarkup(data);
-    listEl.innerHTML = markupList;
+    listElement.innerHTML = markupList;
   }
 };
 
@@ -71,4 +70,4 @@ const createInfoMarkup = data => {
   );
 };
 
-inputEl.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
+inputElement.addEventListener('input', debounce(inputHandler, DEBOUNCE_DELAY));
