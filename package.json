@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://cs050383bav.github.io/goit-js-hw-10/",
   "scripts": {
-    "dev": "parcel src/*.html --port 1009 --open",
+    "dev": "parcel src/*.html --port 1010 --open",
     "build": "parcel build src/index.html --public-url /goit-js-hw-10/"
   },
   "repository": {
